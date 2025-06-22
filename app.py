@@ -14,7 +14,7 @@ if uploaded_file:
 
         # Prepare file for n8n webhook
         files = {
-            "file": (uploaded_file.name, uploaded_file.read(), "text/plain")
+            "file": (uploaded_file.name, uploaded_file.getvalue(), "text/plain")
         }
 
         # POST to your n8n Cloud webhook
