@@ -9,6 +9,7 @@ uploaded_file = st.file_uploader("Upload a text file", type="txt")
 
 if uploaded_file:
     st.success(f"Uploaded: {uploaded_file.name}")
+    st.txt("uploaded_file")
     with st.spinner("Generating note via AI agent..."):
 
         # Prepare file for n8n webhook
