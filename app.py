@@ -25,7 +25,8 @@ if uploaded_file:
             if response.status_code == 200:
                 soap_note = response.json().get("soapNote", "No note returned.")
                 st.subheader("📋 Generated Note")
-                st.text_area("Output", soap_note, height=400)
+                st.markdown(soap_note, unsafe_allow_html=True)
+
             else:
                 st.error(f"Failed with status {response.status_code}: {response.text}")
 
